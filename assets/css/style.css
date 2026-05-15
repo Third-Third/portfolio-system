@@ -1,0 +1,316 @@
+/* ========================================
+   GLOBAL BASE
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: #f8fafc;
+    color: #1f2937;
+}
+
+
+/* ========================================
+   LAYOUT
+======================================== */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    height: 50px;
+    object-fit: contain;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    margin-left: 18px;
+    padding: 6px 0;
+    color: #1f2937;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+
+    width: 0%;
+    height: 2px;
+
+    background: #2563eb;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #2563eb;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+.hero {
+    min-height: 90vh;
+    background:
+        linear-gradient(rgba(2,48,104,0.9), rgba(2,48,104,0.6)),
+        url("../images/hero.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+
+/* ========================================
+   PROJECT CARD
+======================================== */
+.project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #e5e7eb;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.project-img-wrapper {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2f7;
+}
+
+.project-img-wrapper img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+.site-footer {
+    background: linear-gradient(#f8fafc, #eef2f7);
+    border-top: 1px solid #e5e7eb;
+    padding: 24px 0;
+}
+
+
+/* ========================================
+   ADMIN
+======================================== */
+.admin-sidebar {
+    background: white;
+    border-right: 1px solid #e5e7eb;
+}
+
+.admin-nav-link {
+    display: flex;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #1f2937;
+    text-decoration: none;
+}
+
+.admin-nav-link.active {
+    background: #2563eb;
+    color: white;
+}
+/* 
+.admin-nav-link:hover {
+    background: #e0e7ff;
+} */
+
+.admin-nav-link.logout{
+    margin-top: 15px;
+    color: red;
+    border: 1px solid red;
+}
+
+.admin-nav-link.logout:hover{
+    background: #f5eeee;
+}
+
+
+/* ========================================
+   DETAIL PAGE
+======================================== */
+.detail-image-box {
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    border-radius: 12px;
+}
+
+.detail-image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+/* ========================================
+   ✅ GALLERY (FIXED + MODERN)
+======================================== */
+.gallery-box {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8fafc;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.gallery-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.gallery-box:hover img {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   ✅ CAROUSEL ARROW (FIXED)
+======================================== */
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#galleryCarousel:hover .carousel-control-prev,
+#galleryCarousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-size: 50%;
+}
+
+
+/* ========================================
+   ✅ DOT INDICATOR (FIXED)
+======================================== */
+.carousel-indicators {
+    bottom: -30px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+    background-color: #cbd5f5;
+    margin: 0 5px;
+
+    transition: 0.3s;
+}
+
+.carousel-indicators .active {
+    background-color: #2563eb;
+    transform: scale(1.2);
+}
+
+
+/* ========================================
+   ✅ MODAL IMAGE
+======================================== */
+.modal-img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+
+/* ========================================
+   ✅ BACK BUTTON (FINAL)
+======================================== */
+.back-btn-modern {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+
+    padding: 10px 18px;
+    border-radius: 999px;
+
+    background: #2563eb;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.back-btn-modern:hover {
+    background: rgba(37,99,235,0.1);
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.back-btn-modern i {
+    transition: 0.3s;
+}
+
+.back-btn-modern:hover i {
+    transform: translateX(-5px);
+}
